@@ -135,6 +135,15 @@ cd .. && python3 buzz.py start && python3 buzz.py call GET /status && python3 bu
 
 Requires macOS with Metal and full Xcode. The connectome (~95 MB) ships with upstream SiliconFly.
 
+## Agent skill
+
+The reusable Hermes skill is published at
+[skills/buzz-lab/SKILL.md](skills/buzz-lab/SKILL.md). It covers lifecycle,
+HTTP tools, controls, the banana protocol, known errata, and provenance.
+It contains no private machine paths or roleplay framing. Load it into an
+agent's skill library and point the agent at this checkout; the skill itself
+contains no executable installation hook and does not start the simulation.
+
 ## 7. Layout
 
 - `lab.py`, `buzz.py`, `neural_bridge.py`: bridge, lifecycle CLI, closed-loop client.
