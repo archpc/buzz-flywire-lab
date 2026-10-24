@@ -5,12 +5,15 @@ Date: 2026-10-19. Operator: Hermes Agent.
 ## Where Buzz lives
 
 - **Kernel**: `specimen/SiliconFly` (Swift/Metal, Q16 LIF over FlyWire v783,
-  139,255 neurons). Canonical checkout: `specimen/` (git).
-  Upstream clone: `siliconfly/`.
+  139,255 neurons). `specimen/` is a git submodule:
+  [archpc/siliconfly@lab-bridge](https://github.com/archpc/siliconfly/tree/lab-bridge),
+  i.e. upstream dawsonamf/siliconfly `8839d84` + 7 lab commits.
 - **Bridge**: `lab.py` — HTTP/JSON on 127.0.0.1:8080 (stdlib),
   JSON-lines to the kernel subprocess. Contract: `API.md`.
-- **Lifecycle CLI**: `buzz.py` (stdlib, ~200 lines) — start /
-  status / call / stop. This is the only new code added by the integration.
+- **Lifecycle CLI**: `buzz.py` (stdlib) — `buzz.py [--port N] start|status|call|stop`
+  (`--port` goes before the subcommand; `--shuffle` takes a decimal seed).
+  All scripts resolve paths relative to their own location (`BUZZ_HOME`
+  overrides `buzz.py`); process-sweep patterns derive from the checkout path.
 - **Hermes-side**: skill `research/buzz-lab` in `~/.hermes/skills/` —
   capabilities, limitations, lifecycle recipes, data conventions. That is the
   discovery mechanism: any session that scans skills finds Buzz.
@@ -36,14 +39,15 @@ terminal tool — same convention as every other local capability.
 
 ## Experiment records
 
-- Accepted datasets: `data/*.json` — immutable, never overwritten.
+- Accepted datasets: `data/*.json` — immutable, never overwritten. Metadata
+  corrections live in the sidecar `data/PROVENANCE.md`.
 - Session outputs: `data/runs/<UTCts>-<slug>/` via `--out`.
-- Reports: `REPORT.md`, `report_phase2..6.md`; figures in `figs/`.
+- Reports: `docs/report_phase1_survey.md`, `docs/report_phase2..6.md`; figures in `figs/`.
 - Raw measurements (JSON) are kept separate from interpretation (markdown).
-- Reference/provenance data: `reference_model/` (FlyWire v783 + Shiu
-  notebook) — read-only.
+- Reference/provenance data (FlyWire v783 + Shiu notebook) is not redistributed
+  here; see philshiu/Drosophila_brain_model and the FlyWire Codex.
 - Retrieval through Hermes' file tools (search_files / read_file) against
-  ``; datasets are not copied into Hermes memory.
+  the lab checkout; datasets are not copied into Hermes memory.
 
 ## Validation performed (2026-10-19)
 

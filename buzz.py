@@ -3,12 +3,15 @@
 buzz — lifecycle manager for the Drosophila lab (SiliconFly kernel + lab.py bridge).
 
 Single entry point so an agent never has to babysit processes:
-  buzz status                        # bridge/kernel state, kernel identity JSON
-  buzz start [--port N] [--shuffle SEED] [--timeout S]
+  buzz [--port N] status             # bridge/kernel state, kernel identity JSON
+  buzz [--port N] start [--shuffle SEED] [--timeout S]
                                      # reuse healthy instance; spawn if down
-  buzz call METHOD PATH [JSON] [--timeout S]
+                                     # SEED is a decimal int (0xC0FFEE = 12648430)
+  buzz [--port N] call METHOD PATH [JSON] [--timeout S]
                                      # thin passthrough to the bridge API
-  buzz stop                          # POST /shutdown, verify port closed, pkill fallback
+  buzz [--port N] stop               # POST /shutdown, verify port closed, pkill fallback
+
+--port is a top-level option and must come BEFORE the subcommand (default 8080).
 
 stdlib only. Binds stay on 127.0.0.1 (enforced by lab.py, never changed here).
 On-demand by design: no daemon, no LaunchAgent. Stop the fly when done.
@@ -96,7 +99,7 @@ def cmd_start(args):
                 "error": "port occupied by a different arm",
                 "running_shuffle": shuffled,
                 "requested_shuffle": args.shuffle,
-                "hint": f"buzz stop --port {args.port} first, or use another --port",
+                "hint": f"buzz --port {args.port} stop first, or use another --port",
             }))
             return 2
         if want_shuffle and int(st.get("shuffle_seed", -1)) != int(args.shuffle):
@@ -104,7 +107,7 @@ def cmd_start(args):
                 "error": "port occupied by a different shuffle seed",
                 "running_shuffle_seed": st.get("shuffle_seed"),
                 "requested_shuffle_seed": args.shuffle,
-                "hint": f"buzz stop --port {args.port} first, or use another --port",
+                "hint": f"buzz --port {args.port} stop first, or use another --port",
             }))
             return 2
         print(json.dumps({"reused": True, "port": args.port, **st}))

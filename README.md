@@ -139,7 +139,8 @@ Requires macOS with Metal and full Xcode. The connectome (~95 MB) ships with ups
 
 - `lab.py`, `buzz.py`, `neural_bridge.py`: bridge, lifecycle CLI, closed-loop client.
 - `run_*.py`, `analyze_*.py`: experiments and analysis (numpy + matplotlib).
-- `data/`: raw trial records. Accepted datasets are immutable and copied verbatim.
+- `data/`: raw trial records. Accepted datasets are immutable and copied verbatim; metadata
+  corrections (shuffle seeds per dataset) live in [data/PROVENANCE.md](data/PROVENANCE.md).
 - `data/runs/`: per-session runs.
 - `figs/`: figures regenerated from `data/` by the `analyze_*.py` scripts.
 - `docs/`: phase reports, API, install, integration notes, gustatory design doc, audit.

@@ -80,3 +80,9 @@ A reviewer's 435 = 84 + 126 + 225 was correct arithmetic on the numbers as repor
 
 ## 8. What "feeding the banana" means
 The "banana" is the sugar-GRN drive in §2: deterministic current at the 21 identified gustatory receptor neurons for 1,000 ms, highest level run 0.5. [Corrected 2026-10-24: an earlier version of this section said 1.0 strength; no 1.0 trial exists in the dataset.] Measurable response: the dose-response table in §2. Nothing was eaten. No response corresponding to "enjoyed" exists, and none is claimed.
+
+## Metadata correction (2026-10-24)
+The merged dataset's top-level `shuffle_seed: 0` describes only the intact arm.
+The 15 shuffled-arm trials used `0xC0FFEE` (12648430), independently confirmed
+by the original bridge startup log. See [data/PROVENANCE.md](../data/PROVENANCE.md).
+Raw measurements and dataset bytes are unchanged.
