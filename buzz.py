@@ -25,6 +25,18 @@ import urllib.request
 HOME = os.environ.get("BUZZ_HOME", os.path.dirname(os.path.abspath(__file__)))
 LAB = os.path.join(HOME, "lab.py")
 LOGDIR = os.path.join(HOME, "logs")
+
+
+def _ere(text):
+    """Escape a literal path for pgrep/pkill extended regex."""
+    return "".join("\\" + c if c in ".[]()*+?^${}|\\" else c for c in text)
+
+
+# Process-sweep patterns derive from this checkout's location, so stop/evict
+# work wherever the lab lives (previously hardcoded to a 'drosophila/' path,
+# which silently matched nothing in other checkouts).
+LAB_PAT = _ere(LAB)
+KERNEL_PAT = _ere(os.path.join(HOME, "specimen", "SiliconFly")) + " --serve"
 DEFAULT_PORT = 8080
 
 
@@ -101,8 +113,8 @@ def cmd_start(args):
     if port_in_use(args.port):
         # Broken bridge/kernel occupies the port (health check already failed):
         # evict it, then respawn fresh.
-        subprocess.run(["pkill", "-f", "drosophila/lab.py"], capture_output=True)
-        subprocess.run(["pkill", "-f", "drosophila/specimen/SiliconFly --serve"],
+        subprocess.run(["pkill", "-f", LAB_PAT], capture_output=True)
+        subprocess.run(["pkill", "-f", KERNEL_PAT],
                        capture_output=True)
         deadline = time.time() + 10
         while time.time() < deadline and port_in_use(args.port):
@@ -142,7 +154,7 @@ def cmd_start(args):
 
 
 def proc_linger():
-    r = subprocess.run(["pgrep", "-f", "drosophila/lab.py|drosophila/specimen/SiliconFly --serve"],
+    r = subprocess.run(["pgrep", "-f", LAB_PAT + "|" + KERNEL_PAT],
                        capture_output=True, text=True)
     return [int(x) for x in r.stdout.split()]
 
@@ -161,8 +173,8 @@ def cmd_stop(args):
     # child (observed: port closed, lab.py + SiliconFly --serve alive at 0% CPU).
     # Sweep scoped patterns and verify by process list, not port state.
     if proc_linger():
-        subprocess.run(["pkill", "-f", "drosophila/lab.py"], capture_output=True)
-        subprocess.run(["pkill", "-f", "drosophila/specimen/SiliconFly --serve"],
+        subprocess.run(["pkill", "-f", LAB_PAT], capture_output=True)
+        subprocess.run(["pkill", "-f", KERNEL_PAT],
                        capture_output=True)
         deadline = time.time() + 5
         while time.time() < deadline and proc_linger():
