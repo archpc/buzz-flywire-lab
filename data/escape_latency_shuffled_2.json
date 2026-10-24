@@ -1,0 +1,172 @@
+{
+  "experiment": "escape_latency_lab",
+  "phase": "IV",
+  "kernel_version": "1.0.0",
+  "device": "Apple M5 Pro",
+  "connectome": {
+    "n": 139255,
+    "e": 15091983
+  },
+  "arm": "shuffled_control",
+  "shuffle_seed": 3735928335,
+  "stimulus_port": "loomL/loomR sensory input (trial primitive)",
+  "seeds": [
+    12345,
+    12346,
+    12347
+  ],
+  "levels": [
+    0.0,
+    0.1,
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    1.0
+  ],
+  "durations_ms": [
+    100,
+    400
+  ],
+  "settle_ms": 2000,
+  "post_ms": 200,
+  "wall_seconds": 8.2,
+  "timestamp": 1792382107.434978,
+  "trials": [
+    {
+      "loomL": 0.4,
+      "duration_ms": 400,
+      "first_gf_ms": -1,
+      "gf_total": 0,
+      "loom_counts": [],
+      "seed": 12345,
+      "pre_rates": {
+        "pop": 5.015559196472168
+      },
+      "post_rates": {
+        "loom": 19.90638542175293,
+        "pop": 5.586657524108887
+      }
+    },
+    {
+      "loomL": 0.7,
+      "duration_ms": 400,
+      "first_gf_ms": -1,
+      "gf_total": 0,
+      "loom_counts": [],
+      "seed": 12345,
+      "pre_rates": {
+        "pop": 5.015559196472168
+      },
+      "post_rates": {
+        "loom": 27.237775802612305,
+        "pop": 5.551952838897705
+      }
+    },
+    {
+      "loomL": 1.0,
+      "duration_ms": 400,
+      "first_gf_ms": -1,
+      "gf_total": 0,
+      "loom_counts": [],
+      "seed": 12345,
+      "pre_rates": {
+        "pop": 5.015559196472168
+      },
+      "post_rates": {
+        "loom": 31.79684066772461,
+        "pop": 4.47806453704834
+      }
+    },
+    {
+      "loomL": 0.4,
+      "duration_ms": 400,
+      "first_gf_ms": -1,
+      "gf_total": 0,
+      "loom_counts": [],
+      "seed": 12346,
+      "pre_rates": {
+        "pop": 5.794528007507324
+      },
+      "post_rates": {
+        "loom": 19.78578758239746,
+        "pop": 6.758756637573242
+      }
+    },
+    {
+      "loomL": 0.7,
+      "duration_ms": 400,
+      "first_gf_ms": -1,
+      "gf_total": 0,
+      "loom_counts": [],
+      "seed": 12346,
+      "pre_rates": {
+        "pop": 5.794528007507324
+      },
+      "post_rates": {
+        "loom": 30.575061798095703,
+        "pop": 7.325814247131348
+      }
+    },
+    {
+      "loomL": 1.0,
+      "duration_ms": 400,
+      "first_gf_ms": -1,
+      "gf_total": 0,
+      "loom_counts": [],
+      "seed": 12346,
+      "pre_rates": {
+        "pop": 5.794528007507324
+      },
+      "post_rates": {
+        "loom": 34.88992691040039,
+        "pop": 5.935873031616211
+      }
+    },
+    {
+      "loomL": 0.4,
+      "duration_ms": 400,
+      "first_gf_ms": -1,
+      "gf_total": 0,
+      "loom_counts": [],
+      "seed": 12347,
+      "pre_rates": {
+        "pop": 6.237132549285889
+      },
+      "post_rates": {
+        "loom": 22.39358901977539,
+        "pop": 7.240226745605469
+      }
+    },
+    {
+      "loomL": 0.7,
+      "duration_ms": 400,
+      "first_gf_ms": -1,
+      "gf_total": 0,
+      "loom_counts": [],
+      "seed": 12347,
+      "pre_rates": {
+        "pop": 6.237132549285889
+      },
+      "post_rates": {
+        "loom": 29.08827781677246,
+        "pop": 6.664501667022705
+      }
+    },
+    {
+      "loomL": 1.0,
+      "duration_ms": 400,
+      "first_gf_ms": -1,
+      "gf_total": 0,
+      "loom_counts": [],
+      "seed": 12347,
+      "pre_rates": {
+        "pop": 6.237132549285889
+      },
+      "post_rates": {
+        "loom": 31.918968200683594,
+        "pop": 4.687786102294922
+      }
+    }
+  ]
+}

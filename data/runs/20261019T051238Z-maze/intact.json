@@ -1,0 +1,356 @@
+{
+  "experiment": "maze_navigation_threat_avoidance",
+  "phase": "V",
+  "kernel_version": "1.0.0",
+  "device": "Apple M5 Pro",
+  "connectome": {
+    "n": 139255,
+    "e": 15091983
+  },
+  "arm": "intact_connectome",
+  "label": "intact",
+  "shuffle_seed": 0,
+  "target_path": "RLRRLLRLLR",
+  "params": {
+    "junctions": 10,
+    "loom_level": 0.8,
+    "stim_ms": 400,
+    "settle_ms": 1000,
+    "refractory_ms": 600
+  },
+  "decision_rule": "dnaL vs dnaR spike counts over stimulus window; dominant side = turn; correct = opposite loom; ties = no-decision",
+  "stimulus_port": "loomL/loomR via set_input (real sensory drive path)",
+  "seeds": [
+    12345,
+    12346,
+    12347
+  ],
+  "wall_seconds": 9.77,
+  "timestamp": 1792386767.9058702,
+  "runs": [
+    {
+      "seed": 12345,
+      "nostim": false,
+      "score": 10,
+      "of": 10,
+      "junctions": [
+        {
+          "loom_side": "L",
+          "dnaL": 4,
+          "dnaR": 48,
+          "gf": 76,
+          "escw": 385,
+          "choice": "R",
+          "correct": true,
+          "junction": 0
+        },
+        {
+          "loom_side": "R",
+          "dnaL": 37,
+          "dnaR": 9,
+          "gf": 98,
+          "escw": 336,
+          "choice": "L",
+          "correct": true,
+          "junction": 1
+        },
+        {
+          "loom_side": "L",
+          "dnaL": 10,
+          "dnaR": 43,
+          "gf": 77,
+          "escw": 386,
+          "choice": "R",
+          "correct": true,
+          "junction": 2
+        },
+        {
+          "loom_side": "L",
+          "dnaL": 10,
+          "dnaR": 49,
+          "gf": 79,
+          "escw": 381,
+          "choice": "R",
+          "correct": true,
+          "junction": 3
+        },
+        {
+          "loom_side": "R",
+          "dnaL": 35,
+          "dnaR": 9,
+          "gf": 98,
+          "escw": 336,
+          "choice": "L",
+          "correct": true,
+          "junction": 4
+        },
+        {
+          "loom_side": "R",
+          "dnaL": 37,
+          "dnaR": 10,
+          "gf": 101,
+          "escw": 332,
+          "choice": "L",
+          "correct": true,
+          "junction": 5
+        },
+        {
+          "loom_side": "L",
+          "dnaL": 7,
+          "dnaR": 47,
+          "gf": 77,
+          "escw": 384,
+          "choice": "R",
+          "correct": true,
+          "junction": 6
+        },
+        {
+          "loom_side": "R",
+          "dnaL": 39,
+          "dnaR": 10,
+          "gf": 98,
+          "escw": 333,
+          "choice": "L",
+          "correct": true,
+          "junction": 7
+        },
+        {
+          "loom_side": "R",
+          "dnaL": 39,
+          "dnaR": 6,
+          "gf": 100,
+          "escw": 333,
+          "choice": "L",
+          "correct": true,
+          "junction": 8
+        },
+        {
+          "loom_side": "L",
+          "dnaL": 1,
+          "dnaR": 44,
+          "gf": 75,
+          "escw": 383,
+          "choice": "R",
+          "correct": true,
+          "junction": 9
+        }
+      ]
+    },
+    {
+      "seed": 12346,
+      "nostim": false,
+      "score": 10,
+      "of": 10,
+      "junctions": [
+        {
+          "loom_side": "L",
+          "dnaL": 11,
+          "dnaR": 47,
+          "gf": 82,
+          "escw": 385,
+          "choice": "R",
+          "correct": true,
+          "junction": 0
+        },
+        {
+          "loom_side": "R",
+          "dnaL": 54,
+          "dnaR": 12,
+          "gf": 99,
+          "escw": 329,
+          "choice": "L",
+          "correct": true,
+          "junction": 1
+        },
+        {
+          "loom_side": "L",
+          "dnaL": 13,
+          "dnaR": 55,
+          "gf": 83,
+          "escw": 388,
+          "choice": "R",
+          "correct": true,
+          "junction": 2
+        },
+        {
+          "loom_side": "L",
+          "dnaL": 15,
+          "dnaR": 54,
+          "gf": 79,
+          "escw": 388,
+          "choice": "R",
+          "correct": true,
+          "junction": 3
+        },
+        {
+          "loom_side": "R",
+          "dnaL": 51,
+          "dnaR": 9,
+          "gf": 101,
+          "escw": 327,
+          "choice": "L",
+          "correct": true,
+          "junction": 4
+        },
+        {
+          "loom_side": "R",
+          "dnaL": 47,
+          "dnaR": 8,
+          "gf": 100,
+          "escw": 329,
+          "choice": "L",
+          "correct": true,
+          "junction": 5
+        },
+        {
+          "loom_side": "L",
+          "dnaL": 10,
+          "dnaR": 50,
+          "gf": 79,
+          "escw": 390,
+          "choice": "R",
+          "correct": true,
+          "junction": 6
+        },
+        {
+          "loom_side": "R",
+          "dnaL": 52,
+          "dnaR": 10,
+          "gf": 100,
+          "escw": 328,
+          "choice": "L",
+          "correct": true,
+          "junction": 7
+        },
+        {
+          "loom_side": "R",
+          "dnaL": 51,
+          "dnaR": 12,
+          "gf": 101,
+          "escw": 333,
+          "choice": "L",
+          "correct": true,
+          "junction": 8
+        },
+        {
+          "loom_side": "L",
+          "dnaL": 17,
+          "dnaR": 58,
+          "gf": 77,
+          "escw": 390,
+          "choice": "R",
+          "correct": true,
+          "junction": 9
+        }
+      ]
+    },
+    {
+      "seed": 12347,
+      "nostim": false,
+      "score": 10,
+      "of": 10,
+      "junctions": [
+        {
+          "loom_side": "L",
+          "dnaL": 13,
+          "dnaR": 40,
+          "gf": 77,
+          "escw": 381,
+          "choice": "R",
+          "correct": true,
+          "junction": 0
+        },
+        {
+          "loom_side": "R",
+          "dnaL": 42,
+          "dnaR": 9,
+          "gf": 100,
+          "escw": 332,
+          "choice": "L",
+          "correct": true,
+          "junction": 1
+        },
+        {
+          "loom_side": "L",
+          "dnaL": 10,
+          "dnaR": 44,
+          "gf": 78,
+          "escw": 383,
+          "choice": "R",
+          "correct": true,
+          "junction": 2
+        },
+        {
+          "loom_side": "L",
+          "dnaL": 3,
+          "dnaR": 36,
+          "gf": 78,
+          "escw": 384,
+          "choice": "R",
+          "correct": true,
+          "junction": 3
+        },
+        {
+          "loom_side": "R",
+          "dnaL": 44,
+          "dnaR": 8,
+          "gf": 100,
+          "escw": 336,
+          "choice": "L",
+          "correct": true,
+          "junction": 4
+        },
+        {
+          "loom_side": "R",
+          "dnaL": 48,
+          "dnaR": 20,
+          "gf": 101,
+          "escw": 332,
+          "choice": "L",
+          "correct": true,
+          "junction": 5
+        },
+        {
+          "loom_side": "L",
+          "dnaL": 4,
+          "dnaR": 35,
+          "gf": 79,
+          "escw": 386,
+          "choice": "R",
+          "correct": true,
+          "junction": 6
+        },
+        {
+          "loom_side": "R",
+          "dnaL": 45,
+          "dnaR": 19,
+          "gf": 99,
+          "escw": 332,
+          "choice": "L",
+          "correct": true,
+          "junction": 7
+        },
+        {
+          "loom_side": "R",
+          "dnaL": 43,
+          "dnaR": 15,
+          "gf": 101,
+          "escw": 332,
+          "choice": "L",
+          "correct": true,
+          "junction": 8
+        },
+        {
+          "loom_side": "L",
+          "dnaL": 15,
+          "dnaR": 43,
+          "gf": 78,
+          "escw": 380,
+          "choice": "R",
+          "correct": true,
+          "junction": 9
+        }
+      ]
+    }
+  ]
+}

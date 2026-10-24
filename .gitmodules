@@ -1,0 +1,4 @@
+[submodule "specimen"]
+	path = specimen
+	url = https://github.com/archpc/siliconfly.git
+	branch = lab-bridge
